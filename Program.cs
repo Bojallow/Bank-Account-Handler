@@ -25,6 +25,8 @@ namespace Bank {
                 Info info = new Info();
                 info.HowHacked = info.HowHacked();
                 System.Console.WriteLine(info.HowHacked);
+                Fraud fraud = new Fraud();
+                System.Console.WriteLine(fraud.HowHacked());
             }
         }
 
@@ -56,7 +58,7 @@ namespace Bank {
 
         ~HackedAccount() {} 
 
-        public string HowHacked() {
+        public virtual string HowHacked() {
             System.Console.WriteLine("How was your account hacked? ");
             return System.Console.ReadLine();
         }
@@ -68,6 +70,16 @@ namespace Bank {
         public string HowHacked {
             get { return howHacked; }
             set { howHacked = value; }
+        }
+    }
+
+    class Fraud : HackedAccount {
+        public Fraud() {}
+
+        ~Fraud() {}
+
+        public override string HowHacked(){
+            return "Account has been stolen!";
         }
     }
 }
