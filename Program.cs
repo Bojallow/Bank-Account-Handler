@@ -78,7 +78,7 @@ namespace Bank {
 
         ~Fraud() {}
 
-        public override string HowHacked(){
+        public override string HowHacked() {
             return "Account has been stolen!";
         }
     }
